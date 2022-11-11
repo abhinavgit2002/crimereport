@@ -26,11 +26,6 @@ export class LoginComponent implements OnInit {
   // a="mob please"
 
    
-  //for holding mobile number
-  mob = ""
-
-  //holding pswd
-  pswd = ""
 
   constructor() { }
 
@@ -38,19 +33,38 @@ export class LoginComponent implements OnInit {
 
   }
 
-  acnoChange(event: any) {
-    this.mob = event.target.value
 
-  }
 
-  pswdChange(event: any) {
-    this.pswd = event.target.value
+  // login() {
+  //   var mob = this.mob
+  //   var pswd = this.pswd
+    
+  //   let userDetails = this.database
 
-  }
+  //   if (mob in userDetails) 
+  //   {
+  //     if (pswd == userDetails[mob]['password']) 
+  //     {
+  //       alert("Login Sucessfull!")
+  //     }
+  //     else 
+  //     {
+  //       alert("Incorrect Password!")
+  //     }
+  //   } 
+  //   else 
+  //   {
+  //     alert("User does not exist!")
+  //   }
 
-  login() {
-    var mob = this.mob
-    var pswd = this.pswd
+
+  // }
+
+  login(m:any,p:any) {
+  
+    
+    var mob = m.value
+    var pswd = p.value
     
     let userDetails = this.database
 
