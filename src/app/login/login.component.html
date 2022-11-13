@@ -12,12 +12,12 @@
         <p class="message">Already registered? <a href="#">Sign In</a></p>
       </form> -->
       <form class="login-form">
-        <input #mob  type="text" placeholder="Mobile Number" required/>
+        <input [(ngModel)]="mob" name="mob" type="text" placeholder="Mobile Number" required/>
         <!-- property binding -->
         <!-- <input type="text" [placeholder]="a" required/> -->
-        <input #pswd  type="password" placeholder="Password" required/>
-        <button (click)="login(mob,pswd)" >login</button>
-        <p class="message">Not registered? <a href="#">Create an account</a></p>
+        <input [(ngModel)]="pswd" name="pswd" type="password" placeholder="Password" required/>
+        <button (click)="login()" >login</button>
+        <p class="message">Not registered? <a routerLink="register">Create an account</a></p>
       </form>
     </div>
   </div>

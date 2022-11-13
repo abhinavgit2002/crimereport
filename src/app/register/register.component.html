@@ -1,0 +1,15 @@
+
+<div class="login-page">
+    <h4 class="text-center text-light" >REGISTER </h4><br>
+    <div class="form">
+     
+      <form class="login-form">
+        <input [(ngModel)]="uname" name="uname" type="text" placeholder="Name" required/>
+        <input [(ngModel)]="mob" name="mob" type="text" placeholder="Mobile Number" required/>
+        
+        <input [(ngModel)]="pswd" name="pswd" type="password" placeholder="Password" required/>
+        <button (click)="register()" >Register</button>
+        <p class="message">Already registered? <a routerLink="">Sign In</a></p>
+      </form>
+    </div>
+  </div>
