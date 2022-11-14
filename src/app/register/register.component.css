@@ -101,3 +101,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 } 
+
+.errormsg{
+  color: #e00202;
+  margin-left: -170px;
+  margin-bottom: 10px;
+  font-size: small;
+  font-family: "Roboto", sans-serif;
+
+}
+
+.errormsg2{
+  color: #e00202;
+  margin-left: -190px;
+  margin-bottom: 10px;
+  font-size: small;
+  font-family: "Roboto", sans-serif;
+
+}

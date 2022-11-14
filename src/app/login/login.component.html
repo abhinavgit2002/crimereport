@@ -4,19 +4,13 @@
     <h4 class="text-center text-light" >LOGIN</h4><br>
     <div class="form">
         
-      <!-- <form class="register-form">
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form> -->
-      <form class="login-form">
+     
+      <form (ngSubmit)="login()" class="login-form">
         <input [(ngModel)]="mob" name="mob" type="text" placeholder="Mobile Number" required/>
         <!-- property binding -->
         <!-- <input type="text" [placeholder]="a" required/> -->
         <input [(ngModel)]="pswd" name="pswd" type="password" placeholder="Password" required/>
-        <button (click)="login()" >login</button>
+        <button type="submit" >login</button>
         <p class="message">Not registered? <a routerLink="register">Create an account</a></p>
       </form>
     </div>

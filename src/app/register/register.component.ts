@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -9,29 +10,43 @@ import { DataService } from '../services/data.service';
 })
 export class RegisterComponent implements OnInit {
 
-  uname=""
-  mob=""
-  pswd=""
 
-  constructor(private router :Router,private dataService : DataService) { }
+
+  //form group
+  registerForm = this.formBuilder.group({
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
+    mob: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+    pswd: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]*')]]
+  })
+
+  
+  constructor(private router: Router, private dataService: DataService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
-  register(){
-    var mob = this.mob
-    var pswd = this.pswd
-    var uname = this.uname
+  register() {
+    var mob = this.registerForm.value.mob
+    var pswd = this.registerForm.value.pswd
+    var uname = this.registerForm.value.uname
 
-    const result = this.dataService.register(uname,mob,pswd)
+    
 
-    if(result){
-      alert("Register Successfull!")
-      this.router.navigateByUrl("")
+    if (this.registerForm.valid) {
+      const result = this.dataService.register(uname, mob, pswd)
+
+      if (result) {
+        alert("Register Successfull!")
+        this.router.navigateByUrl("")
+      }
+      else {
+        alert("User Already Exist!")
+      }
+    }else{
+      alert("Invalid Form")
     }
-    else{
-      alert("User Already Exist!")
-    }
+
+
   }
 
 }
